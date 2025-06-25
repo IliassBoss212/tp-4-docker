@@ -1,14 +1,23 @@
-name: CI Test TP 4 Docker
-
-on: [push]
+name: Test Python - TP 4  Docker
+on:
+  push:
+    branches: [ master, main ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Hello world
-        run: echo "🎉 Hello depuis GitHub Actions !"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install --upgrade pip
+
+      - name: Run unit tests
+        run: python -m unittest discover
+
