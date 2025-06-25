@@ -14,7 +14,7 @@ class TestSimpleMath(unittest.TestCase):
         Test de la méthode addition.
         """
         self.assertEqual(SimpleMath.addition(2, 3), 5)
-    
+
     def test_soustraction(self):
         """
         Test de la méthode soustraction.
