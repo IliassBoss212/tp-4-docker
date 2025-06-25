@@ -19,4 +19,3 @@ class SimpleMath:
         Retourne la différence entre a et b.
         """
         return a - b
-
