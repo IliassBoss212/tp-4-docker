@@ -10,7 +10,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-       - name: Set up Python
+      
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
@@ -21,8 +22,7 @@ jobs:
           pip install pylint
 
       - name: Run pylint
-        run: |
-          pylint simple_math.py test_simple_math.py
+        run: pylint simple_math.py test_simple_math.py
 
       - name: Run unit tests
         run: python -m unittest discover
